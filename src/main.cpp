@@ -14,7 +14,6 @@ was repeated and the index number of the array it appeared in.
 using namespace std;
 
 void pressAnyKey();
-void getWords(string array[], int size);
 void lookForWord(string array[],int size,string extraWord);
 
 int main()
@@ -22,7 +21,11 @@ int main()
     string extraWord;
     string usrWords[10]; 
     cout << "This program will now ask you to input 10 words\n";
-    getWords(usrWords,10);
+    for(int i = 0;i < 10;i++)
+    {
+        cout << "Write word number " << i <<": ";
+        cin >> usrWords[i]; 
+    }
     pressAnyKey();
     cout << "Now write an additional word: ";
     cin >> extraWord;
@@ -39,14 +42,7 @@ void pressAnyKey()
     getch();
     system("cls");
 }
-void getWords(string array[], int size)
-{
-    for(int i = 0;i < size;i++)
-    {
-        cout << "Write word number " << i <<": ";
-        cin >> array[i]; 
-    }
-}
+
 void lookForWord(string array[],int size,string extraWord)
 {
     int index[10];
